@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>List Employee</title>
+    <h:outputStylesheet library="webjars" name="bootstrap/5.3.2/css/bootstrap.min.css" />
+    <h:outputScript library="webjars" name="bootstrap/5.3.2/js/bootstrap.min.js" />
+</h:head>
+<h:body>
+    <h:outputText value="JSF dataTable Dao Example" styleClass="text-warning h1 ms-5 " />
+    <div class="container mt-5 border border-secondary p-3 pb-0 ">
+        <div class="table-responsive">
+            <h:dataTable var="table" value="#{cs.showEmployee}"  rows="4" styleClass="table table-warning " headerClass="bg-warning text-white fs-5" >
+                <h:column >
+                    <f:facet name="header">
+                        <h:outputText value="ID" />
+                    </f:facet>
+                    <h:outputText value="#{table.name}"  />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="email" />
+                    </f:facet>
+                    <h:outputText value="#{table.email}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText  value="skill" />
+                    </f:facet>
+                    <h:outputText value="#{table.skill}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText  value="project" />
+                    </f:facet>
+                    <h:outputText value="#{table.date}"  />
+                </h:column>
+                <h:column >
+                    <f:facet name="header">
+                        <h:outputText value="Actions" />
+                    </f:facet>
+                    <h:form styleClass="d-flex ">
+                        <h:commandButton value="Delete" action="#{cs.deleteStudent(table.id)}" styleClass="btn btn-danger  text-center pe-3 ps-3 " />
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+        </div>
+        <div class="row">
+            <div class="col-md col-sm col-lg">
+                <h:form>
+                    <div class="d-flex justify-content-between mt-2">
+                        <h:commandLink id="submitButton" value="set change"  action="#{cs.update(cs.id)}" styleClass="text-decoration-none text-white bg-success ps-5 pt-2 pb-2 pe-5 rounded-2" />
+                        <h:commandLink value="Add"  action="add.xhtml" styleClass="text-decoration-none text-white bg-primary ps-5 pt-2 pb-2 pe-5 rounded-2"/>
+                    </div>
+                </h:form>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>

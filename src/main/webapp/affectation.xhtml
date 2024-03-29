@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Affectation Employee</title>
+    <h:outputStylesheet library="webjars" name="bootstrap/5.3.2/css/bootstrap.min.css" />
+    <h:outputScript library="webjars" name="bootstrap/5.3.2/js/bootstrap.min.js" />
+</h:head>
+<h:body>
+
+    <div class="d-flex justify-content-center align-items-center vh-100 ">
+        <table class=" rounded-2 border border-dark" style="border:1px solid #0000">
+
+            <h:form>
+                <tr>
+                    <td colspan="2" class="text-center pb-5"><h:outputText styleClass="fs-3" value="Employe Affectation"></h:outputText></td>
+                </tr>
+                <tr>
+                    <td><h:outputText  value="Employee Name"></h:outputText> </td>
+                    <td class="pt-2">
+                        <h:inputText value="#{cs.name}" ></h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Project Name"></h:outputText> </td>
+                    <td class="pt-2">
+                        <h:inputText   value="#{cs.project}" styleClass="w-25" ></h:inputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Implecation"></h:outputText> </td>
+                    <td class="pt-2">
+                        <h:inputText   value="#{cs.implications}" ></h:inputText>
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="2" class="text-center pt-2">
+                        <h:commandButton value="Affecter Project" styleClass="bg-dark text-white" action="#{cs.addUser()}"></h:commandButton>
+                    </td>
+                </tr>
+            </h:form>
+        </table>
+    </div>
+</h:body>
+</html>
